@@ -1,0 +1,46 @@
+body{
+    background-color: rgb(242, 242, 242);
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+.nav-left{
+    background-color: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 150px;
+}
+.projects{
+    display: flex;
+    justify-content: space-between;
+}
+.nav-middle{
+    background-color: white;
+    position: fixed;
+    height: 350px;
+    width: 350px;
+    left: 20%;
+    top: 15%;
+    border-radius: 12px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.nav-right{
+    background-color: white;
+    position: fixed;
+    height: 350px;
+    width: 350px;
+    left: 60%;
+    top: 15%;
+    border-radius: 12px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.todo{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+.nav-right{
+    background-color: white;
+}
