@@ -76,7 +76,6 @@ function createTaskDeadline(){
     const taskName = document.createElement("input");
     taskName.className = "taskName";
 
-    addingTaskDate.appendChild(taskCalendar);
     addingTaskDate.appendChild(taskName);
-
+    addingTaskDate.appendChild(taskCalendar);
 }

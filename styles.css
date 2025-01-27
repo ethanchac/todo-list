@@ -1,49 +1,103 @@
-body{
+body {
     background-color: rgb(242, 242, 242);
-    gap: 15px;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh; /* Set height of the body to the full viewport height */
+    flex-direction: column;
 }
-.nav-left{
+
+/* Left Sidebar */
+.nav-left {
     background-color: white;
     position: fixed;
     left: 0;
     top: 0;
-    height: 100%;
-    width: 150px;
+    height: 100vh; /* Full height of the viewport */
+    width: 15%;
+    min-width: 120px;
+    padding: 10px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Allow scrolling if content overflows */
 }
-.projects{
-    display: flex;
-    justify-content: space-between;
-}
-.nav-middle{
+
+/* Middle Section */
+.nav-middle {
     background-color: white;
-    position: fixed;
-    height: 350px;
-    width: 350px;
+    position: absolute;
+    top: 10%;
     left: 20%;
-    top: 15%;
+    width: 50%;
+    height: 75%; /* Set height to take up most of the screen */
+    max-height: 75%; /* Avoid overflow beyond the screen */
     border-radius: 12px;
     box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Allow scrolling for large content */
 }
-.nav-right{
+
+/* Right Sidebar */
+.nav-right {
     background-color: white;
-    position: fixed;
-    height: 350px;
-    width: 350px;
-    left: 60%;
-    top: 15%;
+    position: absolute;
+    top: 10%;
+    left: 75%;
+    width: 20%;
+    height: 75%; /* Extend vertically like the middle section */
     border-radius: 12px;
     box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Enable scrolling if needed */
 }
-.todo{
+
+/* Project Buttons */
+.projects {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+/* To-Do Section */
+.todo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 5px;
 }
-.nav-right{
-    background-color: white;
-}
-.input-project{
+
+/* Input Fields */
+.input-project {
     width: 50%;
+}
+
+@media (max-width: 768px) {
+    .nav-left {
+        width: 20%;
+    }
+
+    .nav-middle,
+    .nav-right {
+        left: 10%;
+        width: 80%;
+        height: auto; /* Allow height to shrink for smaller devices */
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-left {
+        position: static; /* Stack vertically */
+        width: 100%;
+        height: auto;
+    }
+
+    .nav-middle,
+    .nav-right {
+        position: static; /* Stack vertically */
+        width: 90%;
+        margin: 10px auto;
+        height: auto; /* Adjust height for smaller screens */
+    }
 }
