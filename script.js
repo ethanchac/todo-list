@@ -1,3 +1,5 @@
+/*import {format, compareAsc } from 'date-fns'; */
+
 const addPrjbtn = document.querySelector("#add-prj");
 const addToDobtn = document.querySelector("#add-todo");
 const todoNone = document.querySelector(".todo");
@@ -49,17 +51,32 @@ addBtn.addEventListener("click", () =>{
 addToDobtn.addEventListener("click", () =>{
     console.log(clicked);
     console.log(todoNone);
+    const seenAlready = document.querySelector(".select-div-pls");
     if(clicked){
-
+        if(seenAlready){
+            todoNone.removeChild(seenAlready);
+        }
+        createTaskDeadline();
     }else{  
-        const seenAlready = document.querySelector(".select-div-pls");
+        var todoSelectDiv = document.createElement("div");
         if(!seenAlready){
-            var todoSelectDiv = document.createElement("div");
             todoSelectDiv.className = "select-div-pls";
             todoSelectDiv.innerHTML = "Please Select a Project";
         }
-        
-
         todoNone.appendChild(todoSelectDiv);
     }
 });
+
+function createTaskDeadline(){
+    const addingTaskDate = document.querySelector(".nav-right");
+
+    const taskCalendar = document.createElement("input");
+    taskCalendar.setAttribute("type", "date");
+
+    const taskName = document.createElement("input");
+    taskName.className = "taskName";
+
+    addingTaskDate.appendChild(taskCalendar);
+    addingTaskDate.appendChild(taskName);
+
+}
